@@ -15,11 +15,11 @@ const Footer = () => {
         <div className="md:flex gap-10 mt-5 text-xl">
           <div className="flex gap-2 items-center">
             <FaPhone size={24} />
-            <h1>01500000000</h1>
+            <h1>+8801953512253</h1>
           </div>
           <div className="flex gap-2 items-center">
             <IoIosMail size={34} />
-            <h1>mahmoodsabbir3087@gmail.com</h1>
+            <h1>Mdasadujjaman101@gmail.com</h1>
           </div>
         </div>
         <h1 className="md:text-xl text-center text-lg w-[70%] my-5">
@@ -40,8 +40,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="md:flex items-center mt-10 md:mt-0 text-center justify-center bg-[#34353A] text-white md:h-10">
-        <h1>© All rights reserved by Mahmood Hasan Sabbir</h1>
+      <div className="md:flex items-center mt-10 md:mt-0 text-center justify-center bg-[#212428] text-white md:h-10">
+        <h1>© All rights reserved by Asujjaman Mahfuz</h1>
       </div>
     </div>
   );

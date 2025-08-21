@@ -1,5 +1,5 @@
 {
-  "name": "next.js-folder-structure",
+  "name": "Asadujjaman Portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,10 +8,10 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "author": "Mahmood Hasan Sabbir",
+  "author": "Asadujjaman",
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.0.2",
-    "antd": "^5.22.2",
+    "antd": "^5.27.1",
     "next": "^14.2.15",
     "react": "^18",
     "react-dom": "^18",

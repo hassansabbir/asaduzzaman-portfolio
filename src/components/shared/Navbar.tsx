@@ -20,12 +20,12 @@ const Navbar = () => {
     );
   }
 
-  const items = [
-    { key: "home", label: "Home", path: "/" },
-    { key: "about", label: "About", path: "/about" },
-    { key: "skills", label: "Skills", path: "/skills" },
-    { key: "portfolio", label: "Portfolio", path: "/portfolio" },
-    { key: "contact", label: "Contact", path: "/contact" },
+  const navItems = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Portfolio", href: "#portfolio" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -44,15 +44,18 @@ const Navbar = () => {
                 />
               </div>
             </div>
-            {/* Nav Items for Desktop */}
+
             <div className="hidden md:flex p-2 items-center gap-5">
-              <NavItems items={items} />
+              <NavItems items={navItems} />
             </div>
           </div>
         </nav>
 
-        {/* Mobile Drawer */}
-        <MobileDrawer open={showDrawer} setOpen={setShowDrawer} items={items} />
+        <MobileDrawer
+          open={showDrawer}
+          setOpen={setShowDrawer}
+          items={navItems}
+        />
       </header>
     </div>
   );

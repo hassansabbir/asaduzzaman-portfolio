@@ -1,19 +1,21 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Dispatch, SetStateAction } from "react";
 import { ConfigProvider, Drawer } from "antd";
 import NavItems from "./NavItems";
 
-const MobileDrawer = ({
-  open,
-  setOpen,
-  items,
-}: {
+interface NavItem {
+  name: string;
+  href: string;
+}
+
+interface MobileDrawerProps {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
-  items: any[];
-}) => {
+  items: NavItem[];
+}
+
+const MobileDrawer = ({ open, setOpen, items }: MobileDrawerProps) => {
   const onClose = () => {
-    setOpen(!open);
+    setOpen(false);
   };
 
   return (
@@ -21,15 +23,27 @@ const MobileDrawer = ({
       theme={{
         components: {
           Drawer: {
-            colorBgElevated: "#161618",
+            colorBgElevated: "#1a1c1e",
           },
         },
       }}
     >
-      <Drawer placement="right" onClose={onClose} open={open}>
-        <div className="flex flex-col w-[80%] gap-8">
-          <NavItems items={items} onClose={onClose} />
-        </div>
+      <Drawer 
+        placement="right" 
+        onClose={onClose} 
+        open={open}
+        width="75%"
+        closeIcon={null}
+        styles={{
+          body: { 
+            padding: '24px 16px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '16px'
+          }
+        }}
+      >
+        <NavItems items={items} onClose={onClose} />
       </Drawer>
     </ConfigProvider>
   );

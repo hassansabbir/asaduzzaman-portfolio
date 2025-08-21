@@ -2,11 +2,16 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+interface NavItem {
+  name: string;
+  href: string;
+}
+
 const NavItems = ({
   items,
   onClose,
 }: {
-  items: any[];
+  items: NavItem[];
   onClose?: () => void;
 }) => {
   const pathname = usePathname();
@@ -16,23 +21,15 @@ const NavItems = ({
       {items.map((item, index) => (
         <Link
           key={index}
+          href={item.href}
           onClick={onClose}
-          className={` leading-4  flex items-center p-2 pe-3 gap-2 text-lg font-[500] ${
-            pathname === item.path
-              ? "rounded  drop-shadow text-white bg-gray-600"
-              : "text-white"
+          className={`leading-4 flex items-center p-2 pe-3 gap-2 text-lg font-[500] ${
+            pathname === item.href
+              ? "rounded drop-shadow text-white bg-gray-600"
+              : "text-white hover:text-orange-500 transition-colors"
           }`}
-          href={item.path}
         >
-          <span
-            className={`  ${
-              pathname === item.path ? " bg-gray-700 text-white" : " text-white"
-            } `}
-          >
-            {" "}
-            {item.icon}
-          </span>{" "}
-          <span> {item.label} </span>
+          <span>{item.name}</span>
         </Link>
       ))}
     </>
