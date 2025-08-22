@@ -69,6 +69,7 @@ const Banner = () => {
             height={53543400}
             className="w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[700px] lg:h-[700px] object-contain"
           />
+          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#212428] via-[#212428]/70 to-transparent pointer-events-none"></div>
         </div>
       </div>
       <div className="absolute top-10 sm:top-20 md:top-40 lg:top-60 right-2 sm:right-4 lg:right-0">
