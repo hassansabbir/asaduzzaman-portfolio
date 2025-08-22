@@ -1,99 +1,84 @@
-import profileImage from "../../../../assets/profileImage.png";
-import backProfileText from "../../../../assets/Frame 427321449.png";
+import profileImage from "@/assets/profileImage.png";
+import background from "@/assets/Frame 427321449.png";
 import Image from "next/image";
+import { FaBehance, FaDribbble, FaFacebook, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
-import {
-  FaInstagram,
-  FaFacebook,
-  FaBehance,
-  FaLinkedin,
-  FaDribbble,
-} from "react-icons/fa";
 
 const Banner = () => {
   return (
-    <div className="bg-[#212428] min-h-screen flex items-center overflow-hidden">
-      <div className="mx-auto flex flex-col lg:flex-row w-full">
-        <div className="w-full lg:w-1/2 text-white py-16 px-8 lg:px-16 flex flex-col justify-center">
-          <p className="text-gray-300 mb-4 text-lg">Hello, I&apos;m</p>
-          <h1 className="text-3xl lg:text-3xl xl:text-4xl font-bold mb-4 leading-tight">
-            Md. Asadujjaman Mahfuz
-          </h1>
-          <h2 className="text-4xl lg:text-6xl xl:text-6xl font-semibold mb-8">
-            <span className="text-orange-500">UX/UI Designer</span>
-          </h2>
+    <div id="home" className="relative">
+      <div className="w-full flex items-center justify-center flex-col lg:flex-row">
+        <div className="w-full px-6 sm:px-8 md:px-12 lg:w-1/2 lg:px-0 flex flex-col items-center gap-4">
+          <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 mt-20 md:mt-0">
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-white md:text-start lg:text-start text-center">
+              Hello, I&apos;m
+            </h3>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white md:text-start lg:text-start text-center">
+              Md. Asadujjaman Mahfuz
+            </h1>
+            <p className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold  bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] bg-clip-text text-transparent md:text-start lg:text-start text-center leading-[1.2] sm:leading-[1.3] md:leading-[1.4] lg:leading-[1.5]">
+              UX/UI Designer
+            </p>
 
-          <div className="flex space-x-4 mb-8">
-            <Link href="">
-              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
-                <FaInstagram />
-              </div>
-            </Link>
-            <Link href="">
-              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
-                <FaFacebook />
-              </div>
-            </Link>
-            <Link href="">
-              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
-                <FaDribbble />
-              </div>
-            </Link>
-            <Link href="">
-              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
-                <FaLinkedin />
-              </div>
-            </Link>
-            <Link href="">
-              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
-                <FaBehance />
-              </div>
-            </Link>
-          </div>
-
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium flex items-center space-x-2 transition-colors w-fit">
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
-            <span>Download CV</span>
-          </button>
-        </div>
-
-        <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-start items-center py-16">
-          <div className="absolute top-1/2 left-3/4 transform -translate-x-1/2 -translate-y-1/2 opacity-10 z-0">
-            <Image
-              src={backProfileText}
-              alt="Background Text"
-              width={602450}
-              height={602450}
-              className="w-[500px] h-[700px]"
-            />
-          </div>
-
-          <div className="relative z-10 left-20">
-            <div className="relative">
-              <Image
-                src={profileImage}
-                alt="Md. Asadujjaman Mahfud - UX/UI Designer"
-                width={5340240}
-                height={62450240}
-                className="w-[600px] lg:w-[600px] h-auto object-contain"
-                priority
-              />
-              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#212428] via-[#212428]/70 to-transparent pointer-events-none"></div>
+            <div className="flex gap-2 sm:gap-3 md:gap-4 lg:gap-4 text-gray-200 my-3 sm:my-4 md:my-5 lg:my-5 justify-center lg:justify-start">
+              <Link href="">
+                <div className="border border-gray-500 p-1.5 sm:p-2 lg:p-2 rounded-full cursor-pointer">
+                  <FaLinkedin
+                    size={20}
+                    className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
+                  />
+                </div>
+              </Link>
+              <Link href="">
+                <div className="border border-gray-500 p-1.5 sm:p-2 lg:p-2 rounded-full cursor-pointer">
+                  <FaFacebook
+                    size={20}
+                    className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
+                  />
+                </div>
+              </Link>
+              <Link href="">
+                <div className="border border-gray-500 p-1.5 sm:p-2 lg:p-2 rounded-full cursor-pointer">
+                  <FaDribbble
+                    size={20}
+                    className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
+                  />
+                </div>
+              </Link>
+              <Link href="">
+                <div className="border border-gray-500 p-1.5 sm:p-2 lg:p-2 rounded-full cursor-pointer">
+                  <FaBehance
+                    size={20}
+                    className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
+                  />
+                </div>
+              </Link>
+            </div>
+            <div className="flex justify-center lg:justify-start">
+              <button className="bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF8D5E] text-white px-4 sm:px-5 md:px-6 lg:px-6 py-1.5 sm:py-2 lg:py-2 rounded-full text-sm sm:text-base">
+                Download CV
+              </button>
             </div>
           </div>
         </div>
+        <div className="hidden w-full mt-6 sm:mt-8 md:mt-10 lg:w-1/2 lg:mt-0 md:flex items-center justify-center z-10 lg:ms-60">
+          <Image
+            src={profileImage}
+            alt="Profile Image"
+            width={5343400}
+            height={53543400}
+            className="w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[700px] lg:h-[700px] object-contain"
+          />
+        </div>
+      </div>
+      <div className="absolute top-10 sm:top-20 md:top-40 lg:top-60 right-2 sm:right-4 lg:right-0">
+        <Image
+          src={background}
+          alt="Profile Image"
+          width={5343400}
+          height={53543400}
+          className="w-[60px] sm:w-[100px] md:w-[150px] lg:w-[200px] object-contain"
+        />
       </div>
     </div>
   );

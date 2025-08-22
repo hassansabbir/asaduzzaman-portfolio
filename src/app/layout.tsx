@@ -3,7 +3,7 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Asujjaman Mahfuz Portfolio",
+  title: "Asadujjaman Mahfuz Portfolio",
 };
 
 export default function RootLayout({

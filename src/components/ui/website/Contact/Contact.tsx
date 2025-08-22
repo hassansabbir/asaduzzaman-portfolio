@@ -27,7 +27,9 @@ const Contact = () => {
       <div className="relative z-10 w-full max-w-2xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
           <span className="text-white">Contact</span>{" "}
-          <span className="text-orange-500">me</span>
+          <span className="bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] bg-clip-text text-transparent">
+            me
+          </span>
         </h2>
         <p className="text-gray-400 text-base md:text-lg mb-12 max-w-lg mx-auto">
           Cultivating Connections: Reach Out and Connect with Me

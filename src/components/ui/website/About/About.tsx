@@ -1,12 +1,13 @@
 import { IoDiamond } from "react-icons/io5";
 import profileImage from "../../../../assets/Frame 427321455.png";
 import Image from "next/image";
+import { FaDownload } from "react-icons/fa";
 
 const About = () => {
   return (
     <div
       id="about"
-      className="bg-[#212428] min-h-screen w-full flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8"
+      className="bg-[#212428] min-h-screen w-full flex items-center justify-center py-16 px-6 sm:px-8 lg:px-8"
     >
       <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
@@ -16,7 +17,7 @@ const About = () => {
                 src={profileImage}
                 alt="Md. Asadujjaman Mahfud"
                 fill
-                className="object-cover object-center scale-120"
+                className="object-contain scale-120"
                 priority
               />
               <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#212428] via-[#212428]/70 to-transparent pointer-events-none"></div>
@@ -26,7 +27,10 @@ const About = () => {
 
         <div className="w-full lg:w-1/2 text-white">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
-            <span className="text-orange-500">About</span> Me
+            <span className="bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] bg-clip-text text-transparent">
+              About
+            </span>{" "}
+            Me
           </h2>
 
           <p className="text-gray-200 text-justify text-base block md:text-lg leading-relaxed mb-12 max-w-2xl">
@@ -87,20 +91,8 @@ const About = () => {
             </div>
           </div>
 
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium flex items-center space-x-2 transition-colors">
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
+          <button className="bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF8D5E] text-white px-6 py-3 rounded-lg font-medium flex items-center space-x-2 transition-colors">
+            <FaDownload />
             <span>Download CV</span>
           </button>
         </div>

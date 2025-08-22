@@ -29,7 +29,9 @@ const Skills = () => {
     >
       <div className="w-full max-w-6xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-          <span className="text-orange-500">Working</span>{" "}
+          <span className="bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] bg-clip-text text-transparent">
+            Working
+          </span>{" "}
           <span className="text-white">Skills</span>
         </h2>
 
@@ -53,7 +55,7 @@ const Skills = () => {
                 />
               </div>
 
-              <h3 className="text-white text-sm md:text-base lg:text-lg font-medium group-hover:text-orange-500 transition-colors duration-300">
+              <h3 className="text-white text-sm md:text-base lg:text-lg font-medium group-hover:bg-gradient-to-r group-hover:from-[#FF8D5E] group-hover:to-[#FF6B6B] group-hover:bg-clip-text group-hover:text-transparent group-hover:transition-colors group-hover:duration-300">
                 {skill.name}
               </h3>
             </div>
