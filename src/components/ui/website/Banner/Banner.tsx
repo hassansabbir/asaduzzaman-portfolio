@@ -1,7 +1,13 @@
 import profileImage from "@/assets/profileImage.png";
 import background from "@/assets/Frame 427321449.png";
 import Image from "next/image";
-import { FaBehance, FaDribbble, FaFacebook, FaLinkedin } from "react-icons/fa";
+import {
+  FaBehance,
+  FaDownload,
+  FaDribbble,
+  FaFacebook,
+  FaLinkedin,
+} from "react-icons/fa";
 import Link from "next/link";
 
 const Banner = () => {
@@ -55,8 +61,8 @@ const Banner = () => {
               </Link>
             </div>
             <div className="flex justify-center lg:justify-start">
-              <button className="bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF8D5E] text-white px-4 sm:px-5 md:px-6 lg:px-6 py-1.5 sm:py-2 lg:py-2 rounded-full text-sm sm:text-base">
-                Download CV
+              <button className="bg-gradient-to-r flex items-center gap-2 from-[#FF8D5E] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF8D5E] !text-white px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 lg:py-3 lg:px-10 rounded-full text-sm lg:text-lg font-semibold sm:text-base">
+                <FaDownload /> Download CV
               </button>
             </div>
           </div>
@@ -72,13 +78,13 @@ const Banner = () => {
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#212428] via-[#212428]/70 to-transparent pointer-events-none"></div>
         </div>
       </div>
-      <div className="absolute top-10 sm:top-20 md:top-40 lg:top-60 right-2 sm:right-4 lg:right-0">
+      <div className="absolute top-10 sm:top-20 md:top-40 lg:top-16 right-2 sm:right-4 lg:right-0">
         <Image
           src={background}
           alt="Profile Image"
           width={5343400}
           height={53543400}
-          className="w-[60px] sm:w-[100px] md:w-[150px] lg:w-[200px] object-contain"
+          className="w-[60px] sm:w-[100px] md:w-[150px] lg:w-[230px] object-contain"
         />
       </div>
     </div>
