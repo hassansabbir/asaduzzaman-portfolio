@@ -35,6 +35,8 @@ const BehanceIcon = ({ className = "" }) => (
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
+
 
   const filters = [
     "All",
@@ -143,6 +145,20 @@ const Portfolio = () => {
       ? projects
       : projects.filter((project) => project.category === activeFilter);
 
+  // Pagination logic
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedProjects = filteredProjects.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({  behavior: "smooth" });
+  };
+
   const handleLinkClick = (
     url: string,
     linkType: string,
@@ -156,7 +172,7 @@ const Portfolio = () => {
   return (
     <div
       id="portfolio"
-      className="min-h-screen bg-gray-900 text-white py-16 px-6"
+      className="min-h-screen bg-[#161618] text-white py-16 px-6"
     >
       <div className="max-w-7xl mx-auto">
         {/* Portfolio Title */}
@@ -167,12 +183,14 @@ const Portfolio = () => {
           {filters.map((filter) => (
             <button
               key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`px-6 md:py-3 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeFilter === filter
-                  ? "bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] text-white shadow-lg"
-                  : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-              }`}
+              onClick={() => {
+                setActiveFilter(filter);
+                setCurrentPage(1);
+              }} 
+              className={`px-6 md:py-3 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeFilter === filter
+                ? "bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] text-white shadow-lg"
+                : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+                }`}
               aria-label={`Filter by ${filter}`}
             >
               {filter}
@@ -182,7 +200,7 @@ const Portfolio = () => {
 
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects?.map((project) => (
+          {paginatedProjects?.map((project) => (
             <article
               key={project.id}
               className="group relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
@@ -276,7 +294,26 @@ const Portfolio = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
             </article>
           ))}
-        </div>
+        </div> 
+
+        {/* Pagination */}
+        {filteredProjects.length > itemsPerPage && (
+          <div className="flex justify-center mt-12 gap-3">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => handlePageChange(page)}
+                className={`px-4 py-2 rounded-md font-medium transition-all ${
+                  currentPage === page
+                    ? "bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] text-white shadow-md"
+                    : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* No results message */}
         {filteredProjects.length === 0 && (
