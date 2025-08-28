@@ -37,7 +37,6 @@ const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
 
-
   const filters = [
     "All",
     "Website Design",
@@ -138,6 +137,21 @@ const Portfolio = () => {
         external: "https://dragonquest-game.com",
       },
     },
+    {
+      id: 7,
+      title: "Dragon Quest",
+      subtitle: "Fantasy RPG",
+      description: "Epic Adventure Gaming Experience",
+      category: "Game Design",
+      logo: "Dragon Quest",
+      image: image3,
+      type: "game",
+      links: {
+        figma: "https://figma.com/dragonquest",
+        behance: "https://behance.net/dragonquest",
+        external: "https://dragonquest-game.com",
+      },
+    },
   ];
 
   const filteredProjects =
@@ -156,7 +170,7 @@ const Portfolio = () => {
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
-    window.scrollTo({  behavior: "smooth" });
+    window.scrollTo({ behavior: "smooth" });
   };
 
   const handleLinkClick = (
@@ -186,11 +200,12 @@ const Portfolio = () => {
               onClick={() => {
                 setActiveFilter(filter);
                 setCurrentPage(1);
-              }} 
-              className={`px-6 md:py-3 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeFilter === filter
-                ? "bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] text-white shadow-lg"
-                : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                }`}
+              }}
+              className={`px-6 md:py-3 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeFilter === filter
+                  ? "bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] text-white shadow-lg"
+                  : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+              }`}
               aria-label={`Filter by ${filter}`}
             >
               {filter}
@@ -294,7 +309,7 @@ const Portfolio = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
             </article>
           ))}
-        </div> 
+        </div>
 
         {/* Pagination */}
         {filteredProjects.length > itemsPerPage && (

@@ -61,7 +61,7 @@ const Banner = () => {
               </Link>
             </div>
             <div className="flex justify-center lg:justify-start">
-              <button className="bg-gradient-to-r flex items-center gap-2 from-[#FF8D5E] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF8D5E] !text-white px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 lg:py-3 lg:px-10 rounded-full text-sm lg:text-lg font-semibold sm:text-base">
+              <button className="bg-gradient-to-r flex items-center gap-2 from-[#FF8D5E] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF8D5E] !text-white px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 lg:py-3 lg:px-10 rounded-lg text-sm lg:text-lg font-semibold sm:text-base">
                 <FaDownload /> Download CV
               </button>
             </div>
