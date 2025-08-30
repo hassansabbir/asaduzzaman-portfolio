@@ -16,7 +16,8 @@ const About = () => {
               <Image
                 src={profileImage}
                 alt="Md. Asadujjaman Mahfud"
-                fill
+                width={5343400}
+                height={53543400}
                 className="object-contain scale-120"
                 priority
               />

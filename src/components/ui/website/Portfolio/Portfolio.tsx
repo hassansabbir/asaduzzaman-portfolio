@@ -1,36 +1,19 @@
 "use client";
 
-import image1 from "@/assets/carebox.png";
-import image2 from "@/assets/inventory.png";
-import image3 from "@/assets/dokterForYou.png";
-
+import projects from "@/data/projects.json";
 import Image from "next/image";
 import React, { useState } from "react";
-import { ExternalLink } from "lucide-react";
+import { FaBehance, FaDribbble, FaFigma } from "react-icons/fa";
 
 // Figma Icon Component
-const FigmaIcon = ({ className = "" }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.02s-1.354-3.02-3.019-3.02h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.015-4.49-4.491S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.02s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.02s1.354 3.02 3.019 3.02h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51c-1.677 0-3.043 1.355-3.043 3.02s1.366 3.02 3.043 3.02c1.677 0 3.043-1.355 3.043-3.02V16.49H8.148zm7.704 0c-.001-2.476 2.013-4.49 4.489-4.49s4.49 2.014 4.49 4.49-2.014 4.49-4.49 4.49-4.49-2.014-4.489-4.49zm4.49-3.02c-1.665 0-3.019 1.355-3.019 3.02s1.354 3.02 3.019 3.02 3.019-1.355 3.019-3.02-1.355-3.02-3.019-3.02z" />
-  </svg>
-);
+const FigmaIcon = ({ className = "" }) => <FaFigma className={className} />;
 
 // Behance Icon Component
-const BehanceIcon = ({ className = "" }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M0 7v10c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2H2c-1.1 0-2 .9-2 2zm22-2v14H2V5h20z" />
-    <path d="M9.5 9.5c0-.6-.4-1-1-1H3v7h5.5c.6 0 1-.4 1-1v-5zm-1 4H4.5v-3H8v3h.5zM15 9.5c0-.6-.4-1-1-1s-1 .4-1 1v5c0 .6.4 1 1 1s1-.4 1-1v-5zm5.5-1h-3v1h3v-1zm0 2h-3v1h3v-1z" />
-  </svg>
+const BehanceIcon = ({ className = "" }) => <FaBehance className={className} />;
+
+// Dribble Icon Component
+const DribbleIcon = ({ className = "" }) => (
+  <FaDribbble className={className} />
 );
 
 const Portfolio = () => {
@@ -45,119 +28,13 @@ const Portfolio = () => {
     "3D",
   ];
 
-  const projects = [
-    {
-      id: 1,
-      title: "CareBox",
-      subtitle: "A Social Impact UX CASE STUDY",
-      description: "to Share, Donate & Resell Essentials",
-      category: "Mobile App Design",
-      logo: "CareBox",
-      image: image1,
-      type: "mobile",
-      links: {
-        figma: "https://figma.com/carebox",
-        behance: "https://behance.net/carebox",
-        external: "https://carebox.com",
-      },
-    },
-    {
-      id: 2,
-      title: "Inventory",
-      subtitle: "Management App",
-      description: "",
-      category: "Mobile App Design",
-      logo: "demo",
-      image: image2,
-      type: "mobile-dark",
-      links: {
-        figma: "https://figma.com/inventory",
-        behance: "https://behance.net/inventory",
-        external: "https://inventory-app.com",
-      },
-    },
-    {
-      id: 3,
-      title: "Dokter For You",
-      subtitle: "Health & Medical",
-      description: "INTERNATIONAL E-HEALTH PLATFORM",
-      category: "Website Design",
-      logo: "Dokter For You",
-      image: image3,
-      type: "website",
-      links: {
-        figma: "https://figma.com/dokterforyou",
-        behance: "https://behance.net/dokterforyou",
-        external: "https://dokterforyou.com",
-      },
-    },
-    {
-      id: 4,
-      title: "EcoShop",
-      subtitle: "E-commerce Platform",
-      description: "Sustainable Shopping Experience",
-      category: "Website Design",
-      logo: "EcoShop",
-      image: image1,
-      type: "website",
-      links: {
-        figma: "https://figma.com/ecoshop",
-        behance: "https://behance.net/ecoshop",
-        external: "https://ecoshop.com",
-      },
-    },
-    {
-      id: 5,
-      title: "MindSpace",
-      subtitle: "Mental Health App",
-      description:
-        "Meditation & Wellness Tracking | Health & Medical | Mobile App Design | UX/UI Design | 3D Animation | Graphic Design | Professional Back-Office Service | UI/UX Design | 3D Animation | Graphic Design | Professional Back-Office Service |",
-      category: "Mobile App Design",
-      logo: "MindSpace",
-      image: image2,
-      type: "mobile",
-      links: {
-        figma: "https://figma.com/mindspace",
-        behance: "https://behance.net/mindspace",
-        external: "https://mindspace-app.com",
-      },
-    },
-    {
-      id: 6,
-      title: "Dragon Quest",
-      subtitle: "Fantasy RPG",
-      description: "Epic Adventure Gaming Experience",
-      category: "Game Design",
-      logo: "Dragon Quest",
-      image: image3,
-      type: "game",
-      links: {
-        figma: "https://figma.com/dragonquest",
-        behance: "https://behance.net/dragonquest",
-        external: "https://dragonquest-game.com",
-      },
-    },
-    {
-      id: 7,
-      title: "Dragon Quest",
-      subtitle: "Fantasy RPG",
-      description: "Epic Adventure Gaming Experience",
-      category: "Game Design",
-      logo: "Dragon Quest",
-      image: image3,
-      type: "game",
-      links: {
-        figma: "https://figma.com/dragonquest",
-        behance: "https://behance.net/dragonquest",
-        external: "https://dragonquest-game.com",
-      },
-    },
-  ];
+  const projectsData = projects;
+  // console.log(projectsData);
 
   const filteredProjects =
     activeFilter === "All"
-      ? projects
-      : projects.filter((project) => project.category === activeFilter);
+      ? projectsData
+      : projectsData.filter((project) => project.category === activeFilter);
 
   // Pagination logic
   const itemsPerPage = 6;
@@ -245,7 +122,7 @@ const Portfolio = () => {
                           project.title
                         )
                       }
-                      className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-all duration-200 hover:scale-110"
+                      className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] transition-all duration-200 hover:scale-110"
                       aria-label={`View ${project.title} on Figma`}
                       title="View on Figma"
                     >
@@ -261,7 +138,7 @@ const Portfolio = () => {
                           project.title
                         )
                       }
-                      className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-all duration-200 hover:scale-110"
+                      className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] transition-all duration-200 hover:scale-110"
                       aria-label={`View ${project.title} on Behance`}
                       title="View on Behance"
                     >
@@ -277,11 +154,11 @@ const Portfolio = () => {
                           project.title
                         )
                       }
-                      className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-all duration-200 hover:scale-110"
+                      className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] transition-all duration-200 hover:scale-110"
                       aria-label={`Visit ${project.title} website`}
-                      title="Visit Website"
+                      title="View on Dribble"
                     >
-                      <ExternalLink className="w-6 h-6 text-white" />
+                      <DribbleIcon className="w-6 h-6 text-white" />
                     </button>
                   </div>
                 </div>

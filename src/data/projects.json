@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "title": "CareBox",
+    "subtitle": "A Social Impact UX CASE STUDY",
+    "description": "to Share, Donate & Resell Essentials",
+    "category": "Mobile App Design",
+    "logo": "CareBox",
+    "image": "https://i.ibb.co.com/JR3QNsSN/Component-10-1.png",
+    "type": "mobile",
+    "links": {
+      "figma": "https://figma.com/carebox",
+      "behance": "https://behance.net/carebox",
+      "external": "https://carebox.com"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Inventory",
+    "subtitle": "Management App",
+    "description": "",
+    "category": "Mobile App Design",
+    "logo": "demo",
+    "image": "https://i.ibb.co.com/JFssMP1x/Mask-group.png",
+    "type": "mobile-dark",
+    "links": {
+      "figma": "https://figma.com/inventory",
+      "behance": "https://behance.net/inventory",
+      "external": "https://inventory-app.com"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Dokter For You",
+    "subtitle": "Health & Medical",
+    "description": "INTERNATIONAL E-HEALTH PLATFORM",
+    "category": "Website Design",
+    "logo": "Dokter For You",
+    "image": "https://i.ibb.co.com/TDRRWXz7/Component-10-2.png",
+    "type": "website",
+    "links": {
+      "figma": "https://figma.com/dokterforyou",
+      "behance": "https://behance.net/dokterforyou",
+      "external": "https://dokterforyou.com"
+    }
+  },
+  {
+    "id": 4,
+    "title": "EcoShop",
+    "subtitle": "E-commerce Platform",
+    "description": "Sustainable Shopping Experience",
+    "category": "Website Design",
+    "logo": "EcoShop",
+    "image": "https://i.ibb.co.com/JR3QNsSN/Component-10-1.png",
+    "type": "website",
+    "links": {
+      "figma": "https://figma.com/ecoshop",
+      "behance": "https://behance.net/ecoshop",
+      "external": "https://ecoshop.com"
+    }
+  },
+  {
+    "id": 5,
+    "title": "MindSpace",
+    "subtitle": "Mental Health App",
+    "description": "Meditation & Wellness Tracking | Health & Medical | Mobile App Design | UX/UI Design | 3D Animation | Graphic Design | Professional Back-Office Service | UI/UX Design | 3D Animation | Graphic Design | Professional Back-Office Service |",
+    "category": "Mobile App Design",
+    "logo": "MindSpace",
+    "image": "https://i.ibb.co.com/JR3QNsSN/Component-10-1.png",
+    "type": "mobile",
+    "links": {
+      "figma": "https://figma.com/mindspace",
+      "behance": "https://behance.net/mindspace",
+      "external": "https://mindspace-app.com"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Dragon Quest",
+    "subtitle": "Fantasy RPG",
+    "description": "Epic Adventure Gaming Experience",
+    "category": "Game Design",
+    "logo": "Dragon Quest",
+    "image": "https://i.ibb.co.com/JR3QNsSN/Component-10-1.png",
+    "type": "game",
+    "links": {
+      "figma": "https://figma.com/dragonquest",
+      "behance": "https://behance.net/dragonquest",
+      "external": "https://dragonquest-game.com"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Dragon Quest",
+    "subtitle": "Fantasy RPG",
+    "description": "Epic Adventure Gaming Experience",
+    "category": "Game Design",
+    "logo": "Dragon Quest",
+    "image": "https://i.ibb.co.com/JR3QNsSN/Component-10-1.png",
+    "type": "game",
+    "links": {
+      "figma": "https://figma.com/dragonquest",
+      "behance": "https://behance.net/dragonquest",
+      "external": "https://dragonquest-game.com"
+    }
+  }
+]

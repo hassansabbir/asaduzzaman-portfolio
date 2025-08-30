@@ -71,6 +71,7 @@ const Banner = () => {
           <Image
             src={profileImage}
             alt="Profile Image"
+            priority={true}
             width={5343400}
             height={53543400}
             className="w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[700px] lg:h-[700px] object-contain"
