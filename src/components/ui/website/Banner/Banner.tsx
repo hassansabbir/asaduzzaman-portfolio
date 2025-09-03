@@ -13,7 +13,7 @@ import Link from "next/link";
 const Banner = () => {
   return (
     <div id="home" className="relative">
-      <div className="w-full flex items-center justify-center flex-col lg:flex-row">
+      <div className="w-full flex items-center px-64 justify-center flex-col lg:flex-row">
         <div className="w-full px-6 sm:px-8 md:px-12 lg:w-1/2 lg:px-0 flex flex-col items-center gap-4">
           <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 mt-20 md:mt-0">
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-white md:text-start lg:text-start text-center">
@@ -74,18 +74,18 @@ const Banner = () => {
             priority={true}
             width={5343400}
             height={53543400}
-            className="w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[700px] lg:h-[700px] object-contain"
+            className="w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[750px] lg:h-[750px] object-contain"
           />
-          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#212428] via-[#212428]/70 to-transparent pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#212428] via-[#212428]/50 to-transparent pointer-events-none"></div>
         </div>
       </div>
-      <div className="absolute top-10 sm:top-20 md:top-40 lg:top-16 right-2 sm:right-4 lg:right-0">
+      <div className="absolute top-10 sm:top-20 md:top-40 lg:top-40 right-2 sm:right-4 lg:right-28">
         <Image
           src={background}
           alt="Profile Image"
           width={5343400}
           height={53543400}
-          className="w-[60px] sm:w-[100px] md:w-[150px] lg:w-[230px] object-contain"
+          className="w-[60px] sm:w-[100px] md:w-[250px] lg:w-[250px] object-contain"
         />
       </div>
     </div>

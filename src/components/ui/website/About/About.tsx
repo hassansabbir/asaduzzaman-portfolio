@@ -1,5 +1,5 @@
 import { IoDiamond } from "react-icons/io5";
-import profileImage from "../../../../assets/Frame 427321455.png";
+import profileImage from "../../../../assets/asadProfile.png";
 import Image from "next/image";
 import { FaDownload } from "react-icons/fa";
 
@@ -12,13 +12,13 @@ const About = () => {
       <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
           <div className="relative">
-            <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[580px] flex items-center justify-center">
+            <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[650px] lg:h-[650px] flex items-start justify-start">
               <Image
                 src={profileImage}
                 alt="Md. Asadujjaman Mahfud"
                 width={5343400}
                 height={53543400}
-                className="object-contain scale-120"
+                className="object-contain w-[650px] h-[650px] mr-80"
                 priority
               />
               <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#212428] via-[#212428]/70 to-transparent pointer-events-none"></div>
