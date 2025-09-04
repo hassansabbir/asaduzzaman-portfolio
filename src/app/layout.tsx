@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Asadujjaman Mahfuz Portfolio",
@@ -35,7 +36,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <AntdRegistry>{children}</AntdRegistry>
+        <AntdRegistry>
+          <Toaster />
+          {children}
+        </AntdRegistry>
       </body>
     </html>
   );
