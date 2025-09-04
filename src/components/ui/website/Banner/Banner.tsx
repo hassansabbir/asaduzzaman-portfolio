@@ -1,5 +1,5 @@
 import profileImage from "@/assets/profileImage.png";
-import background from "@/assets/Frame 427321449.png";
+import background from "@/assets/bannerBg.png";
 import Image from "next/image";
 import {
   FaBehance,
@@ -13,7 +13,7 @@ import Link from "next/link";
 const Banner = () => {
   return (
     <div id="home" className="relative">
-      <div className="w-full flex items-center px-64 justify-center flex-col lg:flex-row">
+      <div className="w-full flex items-center md:px-64 justify-center flex-col lg:flex-row z-10">
         <div className="w-full px-6 sm:px-8 md:px-12 lg:w-1/2 lg:px-0 flex flex-col items-center gap-4">
           <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 mt-20 md:mt-0">
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-white md:text-start lg:text-start text-center">
@@ -79,13 +79,13 @@ const Banner = () => {
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#212428] via-[#212428]/50 to-transparent pointer-events-none"></div>
         </div>
       </div>
-      <div className="absolute top-10 sm:top-20 md:top-40 lg:top-40 right-2 sm:right-4 lg:right-28">
+      <div className="absolute top-10 sm:top-20 md:top-40 lg:top-40 right-0 md:right-2 sm:right-4 lg:right-28 z-0">
         <Image
           src={background}
           alt="Profile Image"
           width={5343400}
           height={53543400}
-          className="w-[60px] sm:w-[100px] md:w-[250px] lg:w-[250px] object-contain"
+          className="w-[70px] sm:w-[100px] md:w-[250px] lg:w-[250px] object-contain"
         />
       </div>
     </div>

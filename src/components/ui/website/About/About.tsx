@@ -12,21 +12,22 @@ const About = () => {
       <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
           <div className="relative">
-            <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[650px] lg:h-[650px] flex items-start justify-start">
+            <div className="md:h-[650px] h-[372px] md:w-[550px] w-[350px] rounded-t-full bg-black"></div>
+            <div className="absolute top-0 md:left-0 left-4 w-80 h-80 md:w-96 md:h-96 lg:w-[650px] lg:h-[650px] flex items-start justify-start">
               <Image
                 src={profileImage}
                 alt="Md. Asadujjaman Mahfud"
                 width={5343400}
                 height={53543400}
-                className="object-contain w-[650px] h-[650px] mr-80"
+                className="object-contain md:w-[650px] md:h-[650px] md:mr-80"
                 priority
               />
-              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#212428] via-[#212428]/70 to-transparent pointer-events-none"></div>
+              <div className="absolute bottom-0 left-0 right-0 md:h-1/3 bg-gradient-to-t from-[#212428] via-[#212428]/70 to-transparent pointer-events-none"></div>
             </div>
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2 text-white">
+        <div className="w-full lg:w-1/2 text-white mt-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
             <span className="bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] bg-clip-text text-transparent">
               About
