@@ -9,6 +9,9 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import Link from "next/link";
+import socialLinks from "@/data/socialLinks.json";
+
+const Links = socialLinks;
 
 const Banner = () => {
   return (
@@ -27,38 +30,60 @@ const Banner = () => {
             </p>
 
             <div className="flex gap-2 sm:gap-3 md:gap-4 lg:gap-4 text-gray-200 my-3 sm:my-4 md:my-5 lg:my-5 justify-center lg:justify-start">
-              <Link href="">
-                <div className="border border-gray-500 p-1.5 sm:p-2 lg:p-2 rounded-full cursor-pointer">
-                  <FaLinkedin
-                    size={20}
-                    className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
-                  />
-                </div>
-              </Link>
-              <Link href="">
-                <div className="border border-gray-500 p-1.5 sm:p-2 lg:p-2 rounded-full cursor-pointer">
-                  <FaFacebook
-                    size={20}
-                    className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
-                  />
-                </div>
-              </Link>
-              <Link href="">
-                <div className="border border-gray-500 p-1.5 sm:p-2 lg:p-2 rounded-full cursor-pointer">
-                  <FaDribbble
-                    size={20}
-                    className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
-                  />
-                </div>
-              </Link>
-              <Link href="">
-                <div className="border border-gray-500 p-1.5 sm:p-2 lg:p-2 rounded-full cursor-pointer">
-                  <FaBehance
-                    size={20}
-                    className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
-                  />
-                </div>
-              </Link>
+              {Links.map((item, index) => (
+                <Link key={index} href={item.url}>
+                  <div className="border border-gray-500 p-1.5 sm:p-2 lg:p-2 rounded-full cursor-pointer">
+                    {item.name === "Facebook" && (
+                      <Link
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaFacebook
+                          size={20}
+                          className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
+                        />
+                      </Link>
+                    )}
+                    {item.name === "LinkedIn" && (
+                      <Link
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaLinkedin
+                          size={20}
+                          className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
+                        />
+                      </Link>
+                    )}
+                    {item.name === "Behance" && (
+                      <Link
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaBehance
+                          size={20}
+                          className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
+                        />
+                      </Link>
+                    )}
+                    {item.name === "Dribble" && (
+                      <Link
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaDribbble
+                          size={20}
+                          className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
+                        />
+                      </Link>
+                    )}
+                  </div>
+                </Link>
+              ))}
             </div>
             <div className="flex justify-center lg:justify-start">
               <button className="bg-gradient-to-r flex items-center gap-2 from-[#FF8D5E] to-[#FF6B6B] hover:from-[#FF6B6B] hover:to-[#FF8D5E] !text-white px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 lg:py-3 lg:px-10 rounded-lg text-sm lg:text-lg font-semibold sm:text-base">
