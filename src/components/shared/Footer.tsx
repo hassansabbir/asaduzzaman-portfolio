@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 import {
@@ -5,91 +7,112 @@ import {
   FaDribbble,
   FaFacebook,
   FaLinkedin,
-  FaPhone,
+  FaArrowUp,
 } from "react-icons/fa";
-import { IoIosMail } from "react-icons/io";
 import socialLinks from "@/data/socialLinks.json";
+import { motion } from "framer-motion";
+import { staggerContainer, scaleIn } from "@/lib/animationVariants";
 
 const Links = socialLinks;
 
+const iconMap: Record<
+  string,
+  React.ComponentType<{ size?: number; className?: string }>
+> = {
+  Facebook: FaFacebook,
+  LinkedIn: FaLinkedin,
+  Behance: FaBehance,
+  Dribble: FaDribbble,
+};
+
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className="bg-[#161618] md:h-[400px]">
-      <div className="container flex flex-col items-center justify-center text-white h-full">
-        <div className="flex md:flex-row flex-col items-center md:gap-10 mt-5 text-xl">
-          <div className="flex gap-2 items-center">
-            <FaPhone size={24} />
-            <h1>+8801953512253</h1>
-          </div>
-          <div className="flex gap-2 items-center">
-            <IoIosMail size={34} />
-            <h1>Mdasadujjaman101@gmail.com</h1>
-          </div>
-        </div>
-        <h1 className="md:text-xl text-center text-lg w-[70%] my-5">
-          You may also find me on these platforms!
-        </h1>
-        <div className="flex gap-2 sm:gap-3 md:gap-4 lg:gap-4 text-gray-200 my-3 sm:my-4 md:my-5 lg:my-5 justify-center lg:justify-start">
-          {Links.map((item, index) => (
-            <Link key={index} href={item.url}>
-              <div className="border border-gray-500 p-1.5 sm:p-2 lg:p-2 rounded-full cursor-pointer">
-                {item.name === "Facebook" && (
-                  <Link
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaFacebook
-                      size={20}
-                      className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
-                    />
-                  </Link>
-                )}
-                {item.name === "LinkedIn" && (
-                  <Link
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaLinkedin
-                      size={20}
-                      className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
-                    />
-                  </Link>
-                )}
-                {item.name === "Behance" && (
-                  <Link
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaBehance
-                      size={20}
-                      className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
-                    />
-                  </Link>
-                )}
-                {item.name === "Dribble" && (
-                  <Link
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaDribbble
-                      size={20}
-                      className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7"
-                    />
-                  </Link>
-                )}
-              </div>
-            </Link>
-          ))}
+    <footer className="bg-[#0c0d0f] relative overflow-hidden">
+      {/* Top gradient border */}
+      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#FF8D5E]/50 to-transparent" />
+
+      {/* Social Icons — above the name */}
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        className="flex justify-center gap-3 pt-20 mb-10 relative z-10"
+      >
+        {Links.map((item, index) => {
+          const Icon = iconMap[item.name];
+          if (!Icon) return null;
+          return (
+            <motion.div
+              key={index}
+              variants={scaleIn}
+              whileHover={{ scale: 1.15, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white/[0.04] border border-white/[0.06] hover:bg-gradient-to-br hover:from-[#FF8D5E]/15 hover:to-[#FF6B6B]/15 hover:border-[#FF8D5E]/30 transition-all duration-300"
+              >
+                <Icon
+                  size={16}
+                  className="text-gray-500 hover:text-white transition-colors"
+                />
+              </Link>
+            </motion.div>
+          );
+        })}
+      </motion.div>
+
+      {/* Giant name — full screen, no container */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative mb-12 w-full px-2"
+      >
+        <h2
+          className="text-[clamp(3rem,16vw,15rem)] font-black text-center leading-none tracking-tighter select-none w-full"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
+          ASADUJJAMAN
+        </h2>
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0c0d0f] to-transparent pointer-events-none" />
+      </motion.div>
+
+      {/* Bottom bar: Copyright + Back to top */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 pb-8 border-t border-white/[0.04]">
+          <span className="text-gray-600 text-xs order-2 sm:order-1">
+            © {new Date().getFullYear()} Asadujjaman Mahfuz. All rights
+            reserved.
+          </span>
+
+          <motion.button
+            whileHover={{ scale: 1.05, y: -1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={scrollToTop}
+            className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/[0.06] text-gray-500 text-xs font-medium hover:text-white hover:border-[#FF8D5E]/30 hover:bg-gradient-to-r hover:from-[#FF8D5E]/10 hover:to-[#FF6B6B]/10 transition-all duration-300 order-1 sm:order-2"
+          >
+            <FaArrowUp size={10} />
+            Back to Top
+          </motion.button>
         </div>
       </div>
-      <div className="md:flex items-center mt-10 md:mt-0 text-center justify-center bg-[#212428] text-white h-8 md:h-10">
-        <h1>© All rights reserved by Asadujjaman Mahfuz</h1>
-      </div>
-    </div>
+    </footer>
   );
 };
 
