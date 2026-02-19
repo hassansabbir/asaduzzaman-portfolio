@@ -16,7 +16,6 @@ import { motion } from "framer-motion";
 import {
   fadeInUp,
   staggerContainer,
-  scaleIn,
   slideInRight,
 } from "@/lib/animationVariants";
 
@@ -43,32 +42,32 @@ const Banner = () => {
         className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#FF8D5E] to-[#FF6B6B] blur-[120px] pointer-events-none"
       />
 
-      <div className="w-full flex items-center md:px-64 justify-center flex-col lg:flex-row z-10 relative">
+      <div className="w-full max-w-7xl mx-auto flex items-center px-6 sm:px-8 justify-center flex-col lg:flex-row z-10 relative">
         {/* Text Content */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="w-full px-6 sm:px-8 md:px-12 lg:w-1/2 lg:px-0 flex flex-col items-center gap-4"
+          className="w-full lg:w-1/2 flex flex-col items-center lg:items-start gap-4"
         >
-          <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 mt-20 md:mt-0">
+          <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 mt-24 lg:mt-0">
             <motion.h3
               variants={fadeInUp}
-              className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-400 font-light tracking-[0.2em] uppercase md:text-start lg:text-start text-center"
+              className="text-base sm:text-lg md:text-xl text-gray-400 font-light tracking-[0.2em] uppercase text-center lg:text-start"
             >
               Hello, I&apos;m
             </motion.h3>
 
             <motion.h1
               variants={fadeInUp}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-bold md:text-start lg:text-start text-center"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-bold text-center lg:text-start"
             >
               Md. Asadujjaman Mahfuz
             </motion.h1>
 
             <motion.p
               variants={fadeInUp}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] bg-clip-text text-transparent md:text-start lg:text-start text-center leading-[1.2] sm:leading-[1.3] md:leading-[1.4] lg:leading-[1.5]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] bg-clip-text text-transparent text-center lg:text-start leading-tight"
             >
               UX/UI Designer
             </motion.p>
@@ -125,7 +124,7 @@ const Banner = () => {
           variants={slideInRight}
           initial="hidden"
           animate="visible"
-          className="hidden w-full mt-6 sm:mt-8 md:mt-10 lg:w-1/2 lg:mt-0 md:flex items-center justify-center z-10 lg:ms-60"
+          className="w-full mt-8 sm:mt-10 lg:w-1/2 lg:mt-0 flex items-center justify-center z-10"
         >
           <Image
             src={profileImage}
@@ -133,9 +132,9 @@ const Banner = () => {
             priority={true}
             width={5343400}
             height={53543400}
-            className="w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[750px] lg:h-[750px] object-contain drop-shadow-2xl"
+            className="w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] object-contain drop-shadow-2xl"
           />
-          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#212428] via-[#212428]/50 to-transparent pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#212428] via-[#212428]/50 to-transparent pointer-events-none" />
         </motion.div>
       </div>
 

@@ -29,7 +29,7 @@ const Skills = () => {
   return (
     <div
       id="skills"
-      className="bg-[#1e2024] min-h-screen w-full flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8"
+      className="bg-[#1e2024] w-full flex items-center justify-center py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8"
     >
       <div className="w-full max-w-6xl mx-auto text-center">
         {/* Section heading */}
@@ -59,7 +59,7 @@ const Skills = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="flex flex-wrap max-w-5xl md:max-w-5xl mx-auto justify-center items-center gap-8 md:gap-10 lg:gap-12"
+          className="flex flex-wrap max-w-5xl mx-auto justify-center items-center gap-4 sm:gap-6 md:gap-10 lg:gap-12"
         >
           {skillsData.map((skill, index) => (
             <motion.div
@@ -74,7 +74,7 @@ const Skills = () => {
             >
               {/* Gradient border wrapper */}
               <div className="relative p-[1px] rounded-xl bg-gradient-to-br from-white/10 to-white/5 hover:from-[#FF8D5E]/50 hover:to-[#FF6B6B]/50 transition-all duration-300">
-                <div className="flex flex-col items-center space-y-4 bg-[#1e2024] p-5 w-[130px] rounded-xl">
+                <div className="flex flex-col items-center space-y-3 sm:space-y-4 bg-[#1e2024] p-4 sm:p-5 w-[110px] sm:w-[130px] rounded-xl">
                   {/* Gradient accent dot */}
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-[2px] bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 

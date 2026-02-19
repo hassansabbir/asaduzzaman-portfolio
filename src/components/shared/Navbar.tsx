@@ -3,7 +3,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import NavItems from "./NavItems";
 import MobileDrawer from "./MobileDrawer";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [showDrawer, setShowDrawer] = useState(false);

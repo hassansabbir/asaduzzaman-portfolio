@@ -102,7 +102,7 @@ const Contact = () => {
       <div className="absolute top-20 left-10 w-[350px] h-[350px] rounded-full bg-gradient-to-br from-[#FF8D5E]/8 to-transparent blur-[100px] pointer-events-none z-0" />
       <div className="absolute bottom-20 right-10 w-[300px] h-[300px] rounded-full bg-gradient-to-tl from-[#FF6B6B]/8 to-transparent blur-[100px] pointer-events-none z-0" />
 
-      <div className="relative z-10 max-w-7xl mx-auto py-24 px-6 sm:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial="hidden"
@@ -181,7 +181,7 @@ const Contact = () => {
                               <span className="text-gray-600 text-xs font-medium uppercase tracking-wider block">
                                 {item.label}
                               </span>
-                              <span className="text-gray-300 text-sm font-medium group-hover/item:text-[#FF8D5E] transition-colors duration-300">
+                              <span className="text-gray-300 text-sm font-medium group-hover/item:text-[#FF8D5E] transition-colors duration-300 break-all sm:break-normal">
                                 {item.value}
                               </span>
                             </div>

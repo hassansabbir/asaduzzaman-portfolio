@@ -64,7 +64,7 @@ const Portfolio = () => {
       <div className="absolute top-40 left-0 w-[500px] h-[500px] bg-gradient-to-br from-[#FF8D5E]/5 to-transparent rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-20 right-0 w-[400px] h-[400px] bg-gradient-to-bl from-[#FF6B6B]/5 to-transparent rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto py-24 px-6 relative z-10">
+      <div className="max-w-7xl mx-auto py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial="hidden"
@@ -147,7 +147,7 @@ const Portfolio = () => {
                         alt={`${project.title} - ${project.subtitle}`}
                         width={600}
                         height={400}
-                        className="w-full h-64 md:h-72 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                        className="w-full h-48 sm:h-56 md:h-72 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                         priority={filteredProjects.indexOf(project) < 3}
                       />
 

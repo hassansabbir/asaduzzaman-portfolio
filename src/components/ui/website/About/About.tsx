@@ -77,7 +77,7 @@ const About = () => {
         </motion.div>
 
         {/* Two-column: Image + Bio */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-20">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 mb-16 lg:mb-20">
           {/* Profile Image */}
           <motion.div
             variants={slideInLeft}
@@ -132,9 +132,9 @@ const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="w-full lg:w-7/12 text-white"
+            className="w-full lg:w-7/12 text-white text-center lg:text-left"
           >
-            <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-white">
               Md. Asadujjaman Mahfuz
             </h3>
             <p className="text-[#FF8D5E] font-medium mb-6 text-lg">
@@ -161,7 +161,7 @@ const About = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="flex gap-6 sm:gap-10 mb-10"
+              className="flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-10 mb-10"
             >
               {stats.map((stat, index) => (
                 <motion.div
@@ -186,7 +186,7 @@ const About = () => {
               href="https://drive.google.com/file/d/1QmCrEEA74ia8ys8BQXdN-7w7C-pqmCwY/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] text-white px-7 py-3.5 rounded-xl font-semibold shadow-[0_4px_20px_rgba(255,107,107,0.3)] hover:shadow-[0_6px_30px_rgba(255,107,107,0.5)] transition-shadow duration-300"
+              className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] text-white px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-semibold text-sm sm:text-base shadow-[0_4px_20px_rgba(255,107,107,0.3)] hover:shadow-[0_6px_30px_rgba(255,107,107,0.5)] transition-shadow duration-300"
             >
               <FaDownload />
               <span>Download CV</span>
