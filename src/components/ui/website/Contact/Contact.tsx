@@ -17,10 +17,12 @@ import {
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
+  FaFacebook,
   FaLinkedin,
   FaBehance,
   FaDribbble,
 } from "react-icons/fa";
+import socialLinks from "@/data/socialLinks.json";
 
 const { TextArea } = Input;
 
@@ -45,11 +47,16 @@ const contactInfo = [
   },
 ];
 
-const socials = [
-  { icon: FaLinkedin, href: "https://www.linkedin.com/in/asadujjamanmahfuz/" },
-  { icon: FaBehance, href: "https://www.behance.net/asadujjamanmahfuz" },
-  { icon: FaDribbble, href: "https://dribbble.com/asadujjamanmahfuz" },
-];
+const iconMap: Record<
+  string,
+  React.ComponentType<{ size?: number; className?: string }>
+> = {
+  Facebook: FaFacebook,
+  LinkedIn: FaLinkedin,
+  Behance: FaBehance,
+  Dribble: FaDribbble,
+  Dribbble: FaDribbble,
+};
 
 const inputStyle = {
   backgroundColor: "rgba(255,255,255,0.03)",
@@ -174,14 +181,14 @@ const Contact = () => {
                             {...wrapperProps}
                             className="flex items-center gap-4 group/item cursor-pointer"
                           >
-                            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#FF8D5E]/10 to-[#FF6B6B]/10 flex items-center justify-center flex-shrink-0 group-hover/item:from-[#FF8D5E]/20 group-hover/item:to-[#FF6B6B]/20 transition-all duration-300">
-                              <Icon className="text-[#FF8D5E] text-base" />
+                            <div className="contact-icon-box w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                              <Icon className="text-xl" />
                             </div>
                             <div>
-                              <span className="text-gray-600 text-xs font-medium uppercase tracking-wider block">
+                              <span className="text-gray-400 text-xs font-semibold uppercase tracking-[0.15em] block mb-1">
                                 {item.label}
                               </span>
-                              <span className="text-gray-300 text-sm font-medium group-hover/item:text-[#FF8D5E] transition-colors duration-300 break-all sm:break-normal">
+                              <span className="text-white text-sm sm:text-base font-medium group-hover/item:text-[#FF8D5E] transition-colors duration-300 break-all sm:break-normal">
                                 {item.value}
                               </span>
                             </div>
@@ -193,8 +200,8 @@ const Contact = () => {
                 </div>
 
                 {/* Social links */}
-                <div className="mt-10 pt-6 border-t border-white/[0.06]">
-                  <p className="text-gray-600 text-xs font-medium uppercase tracking-wider mb-4">
+                <div className="mt-10 pt-6 border-t border-white/[0.08]">
+                  <p className="text-gray-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
                     Follow Me
                   </p>
                   <motion.div
@@ -202,22 +209,24 @@ const Contact = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
-                    className="flex gap-3"
+                    className="flex gap-3.5"
                   >
-                    {socials.map((social, index) => {
-                      const Icon = social.icon;
+                    {socialLinks.map((item, index) => {
+                      const Icon = iconMap[item.name];
+                      if (!Icon) return null;
                       return (
                         <motion.a
                           key={index}
                           variants={scaleIn}
                           whileHover={{ scale: 1.1, y: -2 }}
                           whileTap={{ scale: 0.95 }}
-                          href={social.href}
+                          href={item.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center hover:bg-gradient-to-br hover:from-[#FF8D5E]/15 hover:to-[#FF6B6B]/15 hover:border-[#FF8D5E]/30 transition-all duration-300"
+                          aria-label={item.name}
+                          className="contact-social-btn w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center cursor-pointer"
                         >
-                          <Icon className="text-gray-400 text-base hover:text-white transition-colors" />
+                          <Icon className="text-lg sm:text-xl" />
                         </motion.a>
                       );
                     })}
@@ -318,15 +327,15 @@ const Contact = () => {
                   {/* Submit */}
                   <Form.Item className="!mb-0">
                     <Button
-                      type="default"
+                      type="primary"
                       htmlType="submit"
                       size="large"
-                      icon={!loading && <SendOutlined />}
+                      icon={!loading && <SendOutlined style={{ color: "#ffffff" }} className="!text-white" />}
                       loading={loading}
-                      className="!border-none !px-8 !py-5 !rounded-xl !font-semibold !text-base !h-auto w-full sm:w-auto"
+                      className="!border-none !px-8 !py-5 !rounded-xl !font-semibold !text-base !h-auto w-full sm:w-auto !text-white [&_*]:!text-white hover:!text-white"
                       style={{
                         background: "linear-gradient(135deg, #FF8D5E, #FF6B6B)",
-                        color: "white",
+                        color: "#ffffff",
                         display: "inline-flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -334,7 +343,9 @@ const Contact = () => {
                         boxShadow: "0 4px 20px rgba(255, 107, 107, 0.3)",
                       }}
                     >
-                      {loading ? "Sending..." : "Send Message"}
+                      <span className="!text-white" style={{ color: "#ffffff" }}>
+                        {loading ? "Sending..." : "Send Message"}
+                      </span>
                     </Button>
                   </Form.Item>
                 </Form>

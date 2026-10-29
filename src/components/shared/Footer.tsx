@@ -23,6 +23,7 @@ const iconMap: Record<
   LinkedIn: FaLinkedin,
   Behance: FaBehance,
   Dribble: FaDribbble,
+  Dribbble: FaDribbble,
 };
 
 const Footer = () => {

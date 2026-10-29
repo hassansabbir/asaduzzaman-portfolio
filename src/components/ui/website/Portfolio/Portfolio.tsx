@@ -109,7 +109,7 @@ const Portfolio = () => {
               }}
               className={`px-5 md:px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 relative ${
                 activeFilter === filter
-                  ? "bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] text-white shadow-[0_4px_20px_rgba(255,107,107,0.3)]"
+                  ? "bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] !text-white shadow-[0_4px_20px_rgba(255,107,107,0.3)]"
                   : "bg-white/[0.03] text-gray-400 border border-white/[0.08] hover:text-white hover:bg-white/[0.06] hover:border-white/15"
               }`}
               aria-label={`Filter by ${filter}`}
@@ -255,7 +255,7 @@ const Portfolio = () => {
                 onClick={() => handlePageChange(page)}
                 className={`w-10 h-10 flex items-center justify-center rounded-xl font-medium text-sm transition-all ${
                   currentPage === page
-                    ? "bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] text-white shadow-[0_4px_15px_rgba(255,107,107,0.3)]"
+                    ? "bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] !text-white shadow-[0_4px_15px_rgba(255,107,107,0.3)]"
                     : "bg-white/5 text-gray-400 border border-white/10 hover:bg-white/10 hover:text-white"
                 }`}
               >

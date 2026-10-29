@@ -6,7 +6,7 @@ import Skills from "@/components/ui/website/Skills/Skills";
 
 const page = () => {
   return (
-    <div className="pt-20">
+    <div className="overflow-x-hidden">
       <Banner />
       <About />
       <Skills />

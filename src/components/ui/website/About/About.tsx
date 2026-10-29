@@ -183,13 +183,17 @@ const About = () => {
             <motion.a
               whileHover={{ scale: 1.03, y: -1 }}
               whileTap={{ scale: 0.97 }}
-              href="https://drive.google.com/file/d/1QmCrEEA74ia8ys8BQXdN-7w7C-pqmCwY/view?usp=sharing"
+              href="/resume.pdf"
+              download="Md Asadujjaman Mahfuz Resume for UIUX Designer.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] text-white px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-semibold text-sm sm:text-base shadow-[0_4px_20px_rgba(255,107,107,0.3)] hover:shadow-[0_6px_30px_rgba(255,107,107,0.5)] transition-shadow duration-300"
+              style={{ color: "#ffffff" }}
+              className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] !text-white [&_*]:!text-white px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-semibold text-sm sm:text-base shadow-[0_4px_20px_rgba(255,107,107,0.3)] hover:shadow-[0_6px_30px_rgba(255,107,107,0.5)] transition-shadow duration-300"
             >
-              <FaDownload />
-              <span>Download CV</span>
+              <FaDownload className="!text-white" style={{ color: "#ffffff" }} />
+              <span className="!text-white" style={{ color: "#ffffff" }}>
+                Download CV
+              </span>
             </motion.a>
           </motion.div>
         </div>
