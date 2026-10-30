@@ -4,7 +4,6 @@ import profileImage from "@/assets/profileImage.png";
 import background from "@/assets/bannerBg.png";
 import Image from "next/image";
 import {
-  FaArrowRight,
   FaBehance,
   FaDownload,
   FaDribbble,
@@ -117,24 +116,9 @@ const Banner = () => {
             {/* Action Buttons (CTAs) */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 sm:gap-4 pt-1"
+              className="flex items-center justify-center lg:justify-start pt-2"
             >
-              {/* Primary CTA - Explore Work */}
-              <motion.div
-                whileHover={{ scale: 1.04, y: -2 }}
-                whileTap={{ scale: 0.96 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              >
-                <Link
-                  href="#portfolio"
-                  className="bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl text-sm sm:text-base font-semibold shadow-[0_4px_25px_rgba(255,107,107,0.35)] hover:shadow-[0_6px_30px_rgba(255,107,107,0.5)] transition-all duration-300 flex items-center gap-2.5 group"
-                >
-                  <span>Explore Work</span>
-                  <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-200" />
-                </Link>
-              </motion.div>
-
-              {/* Secondary CTA - Download CV */}
+              {/* Download CV CTA */}
               <motion.a
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.96 }}
@@ -143,18 +127,17 @@ const Banner = () => {
                 download="Md Asadujjaman Mahfuz Resume for UIUX Designer.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "#ffffff" }}
-                className="bg-white/[0.05] hover:bg-white/[0.1] !text-white border border-white/15 hover:border-[#FF8D5E]/40 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl text-sm sm:text-base font-semibold backdrop-blur-md transition-all duration-300 flex items-center gap-2.5 shadow-sm"
+                className="bg-gradient-to-r from-[#FF7A57] via-[#FF6C62] to-[#FF5E6A] text-white px-7 sm:px-8 py-3.5 sm:py-3.5 rounded-2xl text-base sm:text-lg font-bold shadow-[0_6px_25px_rgba(255,100,90,0.45)] hover:shadow-[0_10px_32px_rgba(255,100,90,0.65)] transition-all duration-300 flex items-center gap-3 cursor-pointer"
               >
-                <FaDownload className="text-xs text-[#FF8D5E]" />
-                <span className="!text-white">Download CV</span>
+                <FaDownload className="text-sm sm:text-base text-white" />
+                <span className="text-white">Download CV</span>
               </motion.a>
             </motion.div>
 
             {/* Social Links */}
             <motion.div
               variants={fadeInUp}
-              className="flex items-center gap-2.5 sm:gap-3 pt-2 justify-center lg:justify-start"
+              className="flex items-center gap-2.5 sm:gap-3 pt-3 justify-center lg:justify-start"
             >
               <span className="text-xs uppercase tracking-wider text-gray-500 font-medium hidden sm:inline-block mr-1">
                 Follow:
@@ -182,37 +165,6 @@ const Banner = () => {
                   </motion.div>
                 );
               })}
-            </motion.div>
-
-            {/* Micro Highlights Strip */}
-            <motion.div
-              variants={fadeInUp}
-              className="grid grid-cols-3 gap-3 sm:gap-6 pt-4 border-t border-white/[0.08] w-full max-w-md lg:max-w-lg"
-            >
-              <div>
-                <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent block">
-                  3+
-                </span>
-                <span className="text-[11px] sm:text-xs text-gray-400 block font-medium">
-                  Years Experience
-                </span>
-              </div>
-              <div>
-                <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent block">
-                  50+
-                </span>
-                <span className="text-[11px] sm:text-xs text-gray-400 block font-medium">
-                  Projects Done
-                </span>
-              </div>
-              <div>
-                <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#FF8D5E] to-[#FF6B6B] bg-clip-text text-transparent block">
-                  30+
-                </span>
-                <span className="text-[11px] sm:text-xs text-gray-400 block font-medium">
-                  Happy Clients
-                </span>
-              </div>
             </motion.div>
           </motion.div>
 
@@ -260,7 +212,6 @@ const Banner = () => {
                 </div>
               </motion.div>
 
-
               {/* Floating Badge 2: Bottom-Right Experience */}
               <motion.div
                 animate={{ y: [0, 8, 0] }}
@@ -278,18 +229,6 @@ const Banner = () => {
                     Crafting Products
                   </span>
                 </div>
-              </motion.div>
-
-              {/* Floating Pill: Bottom-Left Tools */}
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 0.4 }}
-                className="hidden sm:flex absolute bottom-4 left-6 bg-[#1a1d21]/85 backdrop-blur-md border border-white/10 rounded-xl px-3 py-1.5 items-center gap-2 shadow-lg z-20 pointer-events-none"
-              >
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-xs font-medium text-gray-300">
-                  Figma • Framer • XD
-                </span>
               </motion.div>
             </div>
           </motion.div>
